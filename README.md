@@ -28,10 +28,32 @@ Following the completion of the Gold Layer in SQL Server, I developed an interac
     * **Data Storytelling:** Identified a significant logistics bottleneck in the **Amazonas (AM)** region, providing a clear path for supply chain optimization.
     * **User Interactivity:** Added "Clear All Slicers" navigation buttons to improve the end-user experience and report accessibility.
 
-### Dashboard Previews
-![Executive Overview](assets/dashboard-executive-overview.png)
-![Logistics Dashboard](assets/dashboard-logistics-delivery.png)
-![Customer Insights](assets/dashboard-customer-seller-insights.png)
+## Dashboard Previews
+*Click each section below to expand the screenshot.*
+
+<details>
+  <summary>📊 Executive Sales & Performance Dashboard</summary>
+  <br>
+  <img src="docs/dashboard-executive-overview.png" width="900" alt="Executive Overview">
+</details>
+
+<details>
+  <summary>👥 Customer & Seller Insights</summary>
+  <br>
+  <img src="docs/dashboard-customer-seller-insights.png" width="900" alt="Customer Seller Insights">
+</details>
+
+<details>
+  <summary>🚚 Logistics Performance & Fulfillment Analysis</summary>
+  <br>
+  <img src="docs/dashboard-logistics-delivery.png" width="900" alt="Logistics Analysis">
+</details>
+
+<details>
+  <summary>📐 Data Model (Star Schema)</summary>
+  <br>
+  <img src="docs/star-schema-diagram.png" width="900" alt="Star Schema Model">
+</details>
 
 ## ⚙️ ETL Process
 1. **Bronze Load**: Bulk insert from CSV files into SQL Server.
