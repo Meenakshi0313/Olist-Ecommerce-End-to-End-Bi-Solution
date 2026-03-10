@@ -1,222 +1,55 @@
-# 🛒 Olist E-Commerce Data Warehouse & Analytics Project
+# Olist E-Commerce Data Warehouse & Analytics Project
 
 ## 📌 Project Overview
-
 This project demonstrates the design and implementation of an end-to-end data analytics solution using a layered data architecture approach. The goal is to transform raw e-commerce data into a clean, business-ready analytical model that supports reporting and insights.
 
-The project covers the full data lifecycle:
-
-* Raw data ingestion
-* Data cleaning and transformation
-* Data quality validation
-* Dimensional modeling (Star Schema)
-* Analytical querying
-
-This project simulates a real-world business intelligence environment commonly used in modern organizations.
-
----
-
 ## 🎯 Objectives
-
-* Build a structured data warehouse from raw CSV files
-* Apply data cleaning and transformation logic
-* Implement layered architecture (Bronze → Silver → Gold)
-* Design a Star Schema for analytics
-* Perform data quality validation checks
-* Prepare data for BI tools such as Power BI
-
----
+* Build a structured data warehouse from raw CSV files.
+* Apply data cleaning and transformation logic.
+* Implement layered architecture (Bronze → Silver → Gold).
+* Design a **Star Schema** for high-performance analytics.
+* Develop an interactive Power BI dashboard for business storytelling.
 
 ## 🏗️ Architecture
-
 The project follows a multi-layered architecture:
-
-```
-Raw Data → Bronze Layer → Silver Layer → Gold Layer → Analytics
-```
-
-### Layers Description
-
-**Bronze Layer — Raw Data**
-
-* Stores ingested data without transformations
-* Serves as historical source of truth
-
-**Silver Layer — Cleaned Data**
-
-* Data type conversions
-* Null handling
-* Business rule implementation
-* Derived columns creation
-* Data validation fixes
-
-**Gold Layer — Analytical Model**
-
-* Star schema design
-* Fact and dimension views
-* Business-ready dataset for reporting
-
----
+**Raw Data → Bronze Layer → Silver Layer → Gold Layer → Power BI Analytics**
 
 ## ⭐ Data Model (Gold Layer)
+The analytical model is designed as a **Star Schema**, consisting of:
+* **Fact Table**: `fact_order_items`
+* **Dimension Tables**: `dim_customers`, `dim_products`, `dim_sellers`, `dim_date`
 
-The analytical model consists of:
+## 📊 BI & Visualization Layer (Power BI)
+Following the completion of the Gold Layer in SQL Server, I developed an interactive Power BI dashboard to translate warehouse data into actionable business insights.
 
-### Fact Table
+* **Key Technical Implementations:**
+    * **Star Schema Architecture:** Utilized the Gold Layer to build clean, efficient relationships.
+    * **Advanced UX/UI:** Implemented custom **Report Page Tooltips** to dynamically resolve state codes to full names, enhancing geographical data readability.
+    * **Data Storytelling:** Identified a significant logistics bottleneck in the **Amazonas (AM)** region, providing a clear path for supply chain optimization.
+    * **User Interactivity:** Added "Clear All Slicers" navigation buttons to improve the end-user experience and report accessibility.
 
-* `fact_order_items`
-
-### Dimension Tables
-
-* `dim_customers`
-* `dim_products`
-* `dim_sellers`
-* `dim_date`
-
-The model enables analysis across customers, products, sellers, and time dimensions.
-
----
+### Dashboard Previews
+![Executive Overview](assets/dashboard-executive-overview.png)
+![Logistics Dashboard](assets/dashboard-logistics-delivery.png)
+![Customer Insights](assets/dashboard-customer-seller-insights.png)
 
 ## ⚙️ ETL Process
-
-Two stored procedures control the pipeline:
-
-### 1️⃣ Bronze Load
-
-`proc_load_bronze`
-
-* Bulk insert from CSV files
-* Minimal processing
-* Raw ingestion
-
-### 2️⃣ Silver Load
-
-`proc_load_silver`
-
-* Data cleaning
-* Type conversions
-* Business logic
-* Derived metrics
-* Data quality improvements
-
-Gold layer is created using SQL views on top of the Silver layer.
-
----
-
-## 📊 Key Metrics Created
-
-* Total item value
-* Payment value aggregation
-* Delivery duration
-* Approval duration
-* Estimated vs actual delivery difference
-* Late delivery flag
-* Customer and seller geolocation enrichment
-* Review score aggregation
-
----
-
-## ✅ Data Quality Checks
-
-Quality validation scripts were implemented for all layers:
-
-### Bronze Layer
-
-* Row count validation
-* Null checks
-* Duplicate detection
-* Data completeness verification
-
-### Silver Layer
-
-* Data type validation
-* Business rule enforcement
-* Invalid value detection
-* Transformation accuracy checks
-
-### Gold Layer
-
-* Referential integrity validation
-* Measure consistency
-* Date relationship validation
-* Aggregation accuracy checks
-
----
-
-## 📁 Project Structure
-
-```
-project-root/
-│
-├── datasets/
-│   ├── raw_csv_files
-│
-├── scripts/
-│   ├── bronze/
-│   ├── silver/
-│   ├── gold/
-│
-├── tests/
-│   ├── bronze_quality_checks.sql
-│   ├── silver_quality_checks.sql
-│   ├── gold_quality_checks.sql
-│
-├── docs/
-│   ├── medallion_architecture.png
-│   ├── data_pipeline.png
-│   ├── star_schema.png
-│
-└── README.md
-```
-
----
+1. **Bronze Load**: Bulk insert from CSV files into SQL Server.
+2. **Silver Load**: Data cleaning, type conversions, and business logic application.
+3. **Gold Layer**: Analytical views created for reporting and BI consumption.
 
 ## 🛠️ Technologies Used
-
-* SQL Server
-* T-SQL
-* Data Warehousing Concepts
-* Dimensional Modeling
-* Draw.io (Diagrams)
+* SQL Server & T-SQL
+* Power BI (DAX, Star Schema Modeling, Report Page Tooltips)
 * GitHub (Version Control)
 
----
-
-## 📈 Potential Business Use Cases
-
-* Sales performance analysis
-* Delivery performance monitoring
-* Customer behavior analysis
-* Seller performance evaluation
-* Product category insights
-* Revenue trend analysis
-
----
-
 ## 🚀 Future Improvements
-
-* Power BI dashboard integration
-* Incremental data loading
-* Data orchestration using pipelines
-* Performance optimization with indexed tables
-* Advanced KPI calculations
+* **Performance Optimization**: Implement indexing on key fact table columns for faster query execution.
+* **Advanced Orchestration**: Integrate with Azure Data Factory for automated scheduling.
+* **Predictive Analytics**: Incorporate forecasting models for revenue and logistics demand.
 
 ---
+*Download the Power BI report file [here](link-to-your-pbix-file).*
 
-## 👨‍💻 Author
-
-Meenakshi Singh
-Data Analyst | SQL | Data Modeling | Business Intelligence
-
----
-
-## 📜 Data Source
-
-Olist Brazilian E-Commerce Public Dataset
-
----
-
-## ⭐ Project Purpose
-
-This project was created for portfolio demonstration and skill development in data analytics and data warehousing concepts.
+**Author:** Meenakshi Singh | Data Analyst | SQL | Data Modeling | Business Intelligence
 
