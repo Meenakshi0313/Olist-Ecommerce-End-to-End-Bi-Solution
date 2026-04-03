@@ -21,11 +21,11 @@ This project transforms the Olist Brazilian E-Commerce dataset into a high-perfo
 
 The project utilizes a Medallion Architecture (Bronze → Silver → Gold) to ensure data integrity and query performance:
 
-**Bronze**: Raw CSV ingestion into SQL Server.
+- **Bronze**: Raw CSV ingestion into SQL Server.
 
-**Silver**: Data cleaning, handling nulls in delivery dates, and standardizing category names.
+- **Silver**: Data cleaning, handling nulls in delivery dates, and standardizing category names.
 
-**Gold (Business Layer)**: Created optimized SQL Views to serve as the source for Power BI, reducing report-level processing time.
+- **Gold (Business Layer)**: Created optimized SQL Views to serve as the source for Power BI, reducing report-level processing time.
 
 ---
 
@@ -33,11 +33,11 @@ The project utilizes a Medallion Architecture (Bronze → Silver → Gold) to en
 
 The heart of this project is a high-performance Star Schema designed for scalability:
 
-**Fact Table**: v_FactOrderItems (Centralized metrics for Revenue, Shipping, and Delivery).
+- **Fact Table**: v_FactOrderItems (Centralized metrics for Revenue, Shipping, and Delivery).
 
-**Dimension Tables**: v_DimCustomer, v_DimProduct, v_DimSeller, and a custom v_DimDate table.
+- **Dimension Tables**: v_DimCustomer, v_DimProduct, v_DimSeller, and a custom v_DimDate table.
 
-**Key Logic**: Implemented 1-to-Many relationships to ensure filter integrity across all three dashboard pages.
+- **Key Logic**: Implemented 1-to-Many relationships to ensure filter integrity across all three dashboard pages.
 
 ---
 
@@ -45,11 +45,11 @@ The heart of this project is a high-performance Star Schema designed for scalabi
 
 I implemented several advanced BI techniques to move the dashboard from "static charts" to a "diagnostic tool":
 
-**Dynamic Reference Labels (YoY Analysis)**: Developed complex DAX measures using CALCULATE and ALL filters to show Year-over-Year growth percentages that remain accurate even when a specific year is filtered.
+- **Dynamic Reference Labels (YoY Analysis)**: Developed complex DAX measures using CALCULATE and ALL filters to show Year-over-Year growth percentages that remain accurate even when a specific year is filtered.
 
-**Inverse KPI Polarity**: Customized conditional formatting for Logistics KPIs—where an increase in delivery days or freight cost is automatically flagged in Red, while a decrease is Green.
+- **Inverse KPI Polarity**: Customized conditional formatting for Logistics KPIs—where an increase in delivery days or freight cost is automatically flagged in Red, while a decrease is Green.
 
-**Efficiency Scatter Analysis**: Replaced standard gauges with a Freight Cost vs. On-Time Delivery scatter plot to identify "The Danger Zone"—high-cost shipping lanes with low reliability.
+- **Efficiency Scatter Analysis**: Replaced standard gauges with a Freight Cost vs. On-Time Delivery scatter plot to identify "The Danger Zone"—high-cost shipping lanes with low reliability.
 
 ---
 
@@ -130,21 +130,21 @@ Click the sections below to view the historical progression of the marketplace.
 
 ### 💡 Key Insights & Recommendations
 
-**Logistics Bottleneck**: The Amazonas (AM) region averages 48 days for delivery, nearly 4x the national average. Recommendation: Establish a local distribution hub or renegotiate carrier contracts for Northern Brazil.
+- **Logistics Bottleneck**: The Amazonas (AM) region averages 48 days for delivery, nearly 4x the national average. Recommendation: Establish a local distribution hub or renegotiate carrier contracts for Northern Brazil.
 
-**The "Sweet Spot"**: The scatter plot reveals that categories like "Bed Bath Table" have the highest volume and high costs; optimizing this single category’s logistics would have a massive impact on total margin.
+- **The "Sweet Spot"**: The scatter plot reveals that categories like "Bed Bath Table" have the highest volume and high costs; optimizing this single category’s logistics would have a massive impact on total margin.
 
-**Scale Stability**: Despite a 14,000% increase in order volume from 2016 to 2017, the average review score stayed at 4.0, proving the marketplace's quality control is scalable.
+- **Scale Stability**: Despite a 14,000% increase in order volume from 2016 to 2017, the average review score stayed at 4.0, proving the marketplace's quality control is scalable.
 
 ---
 
 ### 🛠️ Tech Stack
 
-**Database**: SQL Server (T-SQL)
+- **Database**: SQL Server (T-SQL)
 
-**BI Tool**: Power BI (DAX, Power Query)
+- **BI Tool**: Power BI (DAX, Power Query)
 
-**Methodology**: Star Schema Modeling, Medallion Architecture, UI/UX Dashboard Design.
+- **Methodology**: Star Schema Modeling, Medallion Architecture, UI/UX Dashboard Design.
 
 ---
 
