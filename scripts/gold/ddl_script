@@ -1,6 +1,6 @@
 /*
 ===============================================================================
-DDL Script: Create Gold Views (Refined for Olist E-commerce)
+DDL Script: Create Gold Views 
 ===============================================================================
 Script Purpose:
     - Creates the final Star Schema (Fact and Dimension tables).
@@ -10,14 +10,14 @@ Script Purpose:
 */
 
 -- =============================================================================
--- Create Fact Table: gold.fact_order_items
+-- Create Fact Table: v_FactOrderItems
 -- =============================================================================
 
-IF OBJECT_ID('gold.fact_order_items', 'V') IS NOT NULL
-    DROP VIEW gold.fact_order_items;
+IF OBJECT_ID('v_FactOrderItems', 'V') IS NOT NULL
+    DROP VIEW v_FactOrderItems;
 GO
 
-CREATE VIEW gold.fact_order_items AS
+CREATE VIEW v_FactOrderItems AS
 WITH payment_agg AS (
     SELECT
         order_id,
@@ -39,35 +39,28 @@ SELECT
     o.customer_id,
     oi.product_id,
     oi.seller_id,
-
-    -- Date Key for Star Schema Relationship
     CONVERT(INT, FORMAT(o.order_purchase_timestamp, 'yyyyMMdd')) AS purchase_date_key,
-
     o.order_status,
+    o.order_estimated_delivery_date,
+    o.order_delivered_customer_date,
+
     oi.price,
     oi.freight_value,
     (oi.price + oi.freight_value) AS total_item_value,
     pa.payment_value,
-
-    -- Logistics Performance Metrics
     DATEDIFF(DAY, o.order_purchase_timestamp, o.order_approved_at) AS approval_days,
     DATEDIFF(DAY, o.order_purchase_timestamp, o.order_delivered_customer_date) AS delivery_days,
     DATEDIFF(DAY, o.order_estimated_delivery_date, o.order_delivered_customer_date) AS delivery_vs_estimated_days,
-
-    -- Business Logic Flags
     CASE 
         WHEN o.order_delivered_customer_date > o.order_estimated_delivery_date THEN 1 
         WHEN o.order_delivered_customer_date IS NULL THEN 0 -- Orders still in progress
         ELSE 0 
     END AS is_late_delivery,
-    
-    -- Adding a descriptive label for the slicer
     CASE 
         WHEN o.order_delivered_customer_date > o.order_estimated_delivery_date THEN 'Late'
         WHEN o.order_delivered_customer_date IS NULL THEN 'In Transit/Pending'
         ELSE 'On-Time'
     END AS delivery_performance_status,
-
     ra.review_score,
     o.carrier_before_approval_flag,
     o.delivered_before_carrier_flag
@@ -80,14 +73,14 @@ GO
 
 
 -- =============================================================================
--- Create Dimension: gold.dim_customer (With Geolocation Fix)
+-- Create Dimension: v_DimCustomer 
 -- =============================================================================
 
-IF OBJECT_ID('gold.dim_customer', 'V') IS NOT NULL
-    DROP VIEW gold.dim_customer;
+IF OBJECT_ID('v_DimCustomer ', 'V') IS NOT NULL
+    DROP VIEW v_DimCustomer ;
 GO
 
-CREATE VIEW gold.dim_customer AS
+CREATE VIEW v_DimCustomer  AS
 WITH geo_avg AS (
     SELECT 
         geolocation_zip_code_prefix,
@@ -101,6 +94,19 @@ SELECT
     c.customer_unique_id,
     c.customer_city,
     c.customer_state,
+     CASE c.customer_state
+        WHEN 'AC' THEN 'Acre' WHEN 'AL' THEN 'Alagoas' WHEN 'AP' THEN 'Amapá'
+        WHEN 'AM' THEN 'Amazonas' WHEN 'BA' THEN 'Bahia' WHEN 'CE' THEN 'Ceará'
+        WHEN 'DF' THEN 'Distrito Federal' WHEN 'ES' THEN 'Espírito Santo'
+        WHEN 'GO' THEN 'Goiás' WHEN 'MA' THEN 'Maranhão' WHEN 'MT' THEN 'Mato Grosso'
+        WHEN 'MS' THEN 'Mato Grosso do Sul' WHEN 'MG' THEN 'Minas Gerais'
+        WHEN 'PA' THEN 'Pará' WHEN 'PB' THEN 'Paraíba' WHEN 'PR' THEN 'Paraná'
+        WHEN 'PE' THEN 'Pernambuco' WHEN 'PI' THEN 'Piauí' WHEN 'RJ' THEN 'Rio de Janeiro'
+        WHEN 'RN' THEN 'Rio Grande do Norte' WHEN 'RS' THEN 'Rio Grande do Sul'
+        WHEN 'RO' THEN 'Rondônia' WHEN 'RR' THEN 'Roraima' WHEN 'SC' THEN 'Santa Catarina'
+        WHEN 'SP' THEN 'São Paulo' WHEN 'SE' THEN 'Sergipe' WHEN 'TO' THEN 'Tocantins'
+        ELSE c.customer_state 
+    END AS customer_state_full,
     c.customer_zip_code_prefix,
     ga.customer_lat,
     ga.customer_lng
@@ -110,18 +116,20 @@ GO
 
 
 -- =============================================================================
--- Create Dimension: gold.dim_product
+-- Create Dimension: v_DimProduct
 -- =============================================================================
 
-IF OBJECT_ID('gold.dim_product', 'V') IS NOT NULL
-    DROP VIEW gold.dim_product;
+IF OBJECT_ID('v_DimProduct', 'V') IS NOT NULL
+    DROP VIEW v_DimProduct;
 GO
 
-CREATE VIEW gold.dim_product AS
+CREATE VIEW v_DimProduct AS
 SELECT
     p.product_id,
     p.product_category_name,
-    t.product_category_name_english,
+    UPPER(LEFT(REPLACE(t.product_category_name_english, '_', ' '), 1)) + 
+    LOWER(SUBSTRING(REPLACE(t.product_category_name_english, '_', ' '), 2, LEN(product_category_name_english))) 
+    AS product_category_name_english,
     p.product_weight_g,
     p.product_length_cm,
     p.product_height_cm,
@@ -133,14 +141,14 @@ GO
 
 
 -- =============================================================================
--- Create Dimension: gold.dim_seller (With Geolocation Fix)
+-- Create Dimension: v_DimSeller 
 -- =============================================================================
 
-IF OBJECT_ID('gold.dim_seller', 'V') IS NOT NULL
-    DROP VIEW gold.dim_seller;
+IF OBJECT_ID('v_DimSeller ', 'V') IS NOT NULL
+    DROP VIEW v_DimSeller ;
 GO
 
-CREATE VIEW gold.dim_seller AS
+CREATE VIEW v_DimSeller  AS
 WITH geo_avg AS (
     SELECT 
         geolocation_zip_code_prefix,
@@ -153,6 +161,18 @@ SELECT
     s.seller_id,
     s.seller_city,
     s.seller_state,
+     CASE s.seller_state
+        WHEN 'AC' THEN 'Acre' WHEN 'AM' THEN 'Amazonas' WHEN 'BA' THEN 'Bahia'
+        WHEN 'CE' THEN 'Ceará' WHEN 'DF' THEN 'Distrito Federal' WHEN 'ES' THEN 'Espírito Santo'
+        WHEN 'GO' THEN 'Goiás' WHEN 'MA' THEN 'Maranhão' WHEN 'MT' THEN 'Mato Grosso'
+        WHEN 'MS' THEN 'Mato Grosso do Sul' WHEN 'MG' THEN 'Minas Gerais'
+        WHEN 'PA' THEN 'Pará' WHEN 'PB' THEN 'Paraíba' WHEN 'PR' THEN 'Paraná'
+        WHEN 'PE' THEN 'Pernambuco' WHEN 'PI' THEN 'Piauí' WHEN 'RJ' THEN 'Rio de Janeiro'
+        WHEN 'RN' THEN 'Rio Grande do Norte' WHEN 'RS' THEN 'Rio Grande do Sul'
+        WHEN 'RO' THEN 'Rondônia' WHEN 'SC' THEN 'Santa Catarina'
+        WHEN 'SP' THEN 'São Paulo' WHEN 'SE' THEN 'Sergipe'
+        ELSE seller_state 
+    END AS seller_state_full,
     s.seller_zip_code_prefix,
     ga.seller_lat,
     ga.seller_lng
@@ -162,14 +182,14 @@ GO
 
 
 -- =============================================================================
--- Create Dimension: gold.dim_date
+-- Create Dimension: v_DimDate
 -- =============================================================================
 
-IF OBJECT_ID('gold.dim_date', 'V') IS NOT NULL
-    DROP VIEW gold.dim_date;
+IF OBJECT_ID('v_DimDate', 'V') IS NOT NULL
+    DROP VIEW v_DimDate;
 GO
 
-CREATE VIEW gold.dim_date AS
+CREATE VIEW v_DimDate AS
 SELECT DISTINCT
     CONVERT(INT, FORMAT(order_purchase_timestamp, 'yyyyMMdd')) AS date_key,
     CAST(order_purchase_timestamp AS DATE) AS full_date,
