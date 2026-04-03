@@ -9,11 +9,11 @@ This project transforms the Olist Brazilian E-Commerce dataset into a high-perfo
 
 ### 🚀 Quick Access
 
-📊 View Executive Performance Report (PDF) (./Report_and_Dashboard/Olist_Full_Performance_Report_2016-2018.pdf)
-
-🛠️ Download Power BI Dashboard (./Report_and_Dashboard/Olist_E-commerce_Analytics_Dashboard.pbix)
-
-💾 View SQL Gold-Layer Transformation Scripts (SQL_Scripts/gold/Olist_Gold_Layer_Views)
+* 📊 [**View Executive Performance Report (PDF)**](Report_and_Dashboard/Olist_Full_Performance_Report_2016-2018.pdf)
+  
+* 🛠️ [**Download Power BI Dashboard (.pbix)**](Report_and_Dashboard/Olist_E-commerce_Analytics_Dashboard.pbix)
+  
+* 💾 [**View SQL Gold-Layer Transformation Scripts**](SQL_Scripts/gold/Olist_Gold_Layer_Views.sql)
 
 ---
 
@@ -123,7 +123,7 @@ Click the sections below to view the historical progression of the marketplace.
   <details>
   <summary> Data Model </summary>
   <br>
-  <img src="docs/Olist_Star_Schema_Data_Model.png" width="900" alt="Olist_Star_Schema_Data_Model">
+  <img src="Assets/Olist_Star_Schema_Data_Model.png" width="900" alt="Olist_Star_Schema_Data_Model">
   </details>
 
 ---
