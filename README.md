@@ -13,7 +13,7 @@ This project transforms the Olist Brazilian E-Commerce dataset into a high-perfo
   
 * 🛠️ [**Download Power BI Dashboard (.pbix)**](Report_and_Dashboard/Olist_E-commerce_Analytics_Dashboard.pbix)
   
-* 💾 [**View SQL Gold-Layer Transformation Scripts**](SQL_Scripts/gold/Olist_Gold_Layer_Views)
+* 💾 [**View SQL Gold-Layer Transformation Scripts**](SQL_Scripts/02_Gold_Reporting_Views.sql)
 
 ---
 
