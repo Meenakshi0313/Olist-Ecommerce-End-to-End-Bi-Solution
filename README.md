@@ -15,7 +15,9 @@ The foundation of this suite is a high-performance **Star Schema** designed for 
    
 <details>
 <summary>📸 Click here to view the Star Schema Diagram</summary>
-![Star Schema Data Model](Olist_Star_Schema_Data_Model.png)
+   
+![Star Schema Data Model](Assets/Olist_Star_Schema_Data_Model.png)
+
 </details>
 
 * **Fact Table:** `v_FactOrderItems` — Stores granular transactional metrics (Price, Freight, Delivery Days).
