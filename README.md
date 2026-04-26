@@ -1,8 +1,5 @@
 # 🚀 Olist Marketplace: Strategic Sales & Operational Intelligence Suite
 
-**Author:** Meenakshi Singh  
-**Role:** Aspiring Data Analyst  
-**Tech Stack:** Power BI, DAX, Power Query, SQL (TSQL)
 
 ## 📌 Executive Summary
 
