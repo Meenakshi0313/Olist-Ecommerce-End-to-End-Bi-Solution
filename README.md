@@ -41,34 +41,70 @@ The foundation of this suite is a high-performance **Star Schema** designed for 
 
 ---
 
-## 📊 The Analytical Suite Breakdown
+## 📊 Analytical Suite Breakdown
 
-### 1. Home Page / Navigation Hub
+<details>
+<summary><b>1. Home Page / Navigation Hub (Click to expand)</b></summary>
 
+### 🏠 Navigation Central
 The central entry point providing a high-level branding overview and intuitive access to all sub-intelligence modules.
-![Home Page](Assets/01_Home_Page.png)
+* **Business Case:** Eliminates "Dashboard Fatigue" by providing a clean, intuitive entry point for non-technical users.
+* **Key Features:** Interactive grid layout, high-contrast buttons with glow-effects, and a unified SaaS-style brand identity.
 
-### 2. Executive Strategic Suite
+![Home Page](Assets/01_Home_Page.jpg)
+</details>
 
-Focuses on "North Star" metrics including Total Revenue, Perfect Order Rate, and Revenue Distribution.
+<details>
+<summary><b>2. Executive Strategic Suite (Click to expand)</b></summary>
+
+### 📊 "North Star" Metrics & High-Level Growth
+* **Business Case:** Provides stakeholders with an immediate pulse on marketplace health, focusing on Revenue, Volume, and Order Quality.
+* **Key Features:**
+    * **Strategic KPIs:** Real-time tracking of **Total Revenue ($1.11M)** and **Perfect Order Rate (52.60%)**.
+    * **Revenue Contribution:** Donut chart breakdown by Price Point (High/Mid/Low Value) to identify volume drivers.
+    * **Trend Analysis:** Dual-axis charts comparing Monthly Revenue against Profitability to detect seasonal shifts.
+
 ![Executive Suite](Assets/02_Executive_Strategic_Suite.png)
+</details>
 
-### 3. Logistics & Supply Chain Intelligence
+<details>
+<summary><b>3. Logistics & Supply Chain Intelligence (Click to expand)</b></summary>
 
-Deep-dives into delivery performance, SLA Compliance %, and Average Delivery Days by state.
+### 🚚 Operational Efficiency & Fulfillment Reliability
+* **Business Case:** Identifies bottlenecks in the "Last Mile" of delivery to reduce customer friction and freight overhead.
+* **Key Features:**
+    * **SLA Monitoring:** Tracks **SLA Compliance % (93.44%)** and Average Delivery Days (14.02).
+    * **Performance Scatter Chart:** Visualizes Freight Cost vs. Delivery Performance to flag expensive/slow routes.
+    * **State-Level Analytics:** Identifies specific Brazilian states experiencing the longest logistics delays.
+
 ![Logistics Intelligence](Assets/03_Logistics_intelligence.png)
+</details>
 
+<details>
+<summary><b>4. Ecosystem & Network Dynamics (Click to expand)</b></summary>
 
-### 4. Ecosystem & Network Dynamics
+### 🌐 Marketplace Health (Sellers & Customers)
+* **Business Case:** Monitors the balance between supply (Sellers) and demand (Customers) to ensure platform scalability.
+* **Key Features:**
+    * **Active Seller Ratio:** Tracks platform engagement with a **31% Active Seller rate**.
+    * **Geographic Density:** Bubble map visualizing revenue concentration and identifying under-served regions.
+    * **Retention Metrics:** Analysis of **New (93.47%)** vs. **Returning (6.53%)** customer segments.
 
-Analyzes the health of the marketplace by mapping Seller quality vs. Revenue contribution.
 ![Ecosystem Dynamics](Assets/04_Ecosystem_Dynamics.png)
+</details>
 
-### 5. Product Portfolio Performance
+<details>
+<summary><b>5. Product Portfolio Performance (Click to expand)</b></summary>
 
-Identifies the "Stars" and "Risks" using Profitability vs. Satisfaction scatter charts.
+### 📦 Quality Control & Inventory Intelligence
+* **Business Case:** Analyzes the 80/20 rule to find which categories drive value vs. those creating brand risk through poor reviews.
+* **Key Features:**
+    * **Risk Alert Table:** Custom-formatted table instantly flagging categories with a **Low Rating % above 20%**.
+    * **Profitability vs. Satisfaction:** Scatter chart used to isolate "High Risk" categories.
+    * **Review Score Distribution:** Histogram showing the volume of 1-5 star ratings across the catalog.
+
 ![Product Performance](Assets/05_Product_Performance.png)
-
+</details>
 ---
 
 ## 📈 Key Insights & Business Value
