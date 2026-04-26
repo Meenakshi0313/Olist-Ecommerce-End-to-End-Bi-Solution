@@ -133,6 +133,10 @@ The central entry point providing a high-level branding overview and intuitive a
 
 ---
 
-**Author: Meenakshi Singh | Aspiring Data Analyst**
+## 👤 About the Author
 
-*Specializing in SQL, Data Modeling, and Business Intelligence.*
+Name: Meenakshi Singh
+
+Role: Aspiring Data Analyst
+
+Portfolio Focus: Business Intelligence & Strategic Analytics
