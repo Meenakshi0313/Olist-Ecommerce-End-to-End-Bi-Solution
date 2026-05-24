@@ -70,8 +70,8 @@ Instead of cluttering the documentation layout, toggle the links below to expand
 ## 📦 How to Explore the Model Locally
 
 The complete engineering scripts and compiled interactive models are open-source and hosted within this repository:
-* Browse the SQL optimization logic inside the `/01_Data_Architecture/` folder.
-* Download the compiled **`Olist_Ecommerce_Analytics_Dashboard.pbix`** file inside the `/02_BI_Suite_Files/` directory to inspect live DAX calculations, evaluation contexts, and model relationships within Power BI Desktop.
+* Browse the SQL optimization logic inside the `/SQL_Scripts/` folder.
+* Download the compiled **`Olist_Ecommerce_Analytics_Dashboard.pbix`** file inside the `/Report_and_Dashboard/` directory to inspect live DAX calculations, evaluation contexts, and model relationships within Power BI Desktop.
 
 ***
 **Author:** Meenakshi Singh  
