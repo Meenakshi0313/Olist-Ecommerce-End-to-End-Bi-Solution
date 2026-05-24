@@ -2,10 +2,10 @@
 
 <p align="center">
   <a href="#-executive-bi-dashboard-suite"><b>📊 View Dashboards</b></a> •
-  <a href="01_Data_Architecture/create_gold_views.sql"><b>💾 T-SQL Gold Views Script</b></a> •
-  <a href="02_BI_Suite_Files/Olist_Ecommerce_Analytics_Dashboard.pbix"><b>📦 Download .PBIX Model</b></a> •
-  <a href="02_BI_Suite_Files/Olist_Executive_BI_Suite_Report.pdf"><b>📄 View Compiled PDF</b></a> •
-  <a href="https://www.kaggle.com/datasets/olistbr/brazilian-e-commerce"><b>💾 Source Dataset (Kaggle)</b></a>
+  <a href="SQL_Scripts/02_Gold_Reporting_Views.sql"><b>💾 T-SQL Gold Views Script</b></a> •
+  <a href="Report_and_Dashboard/Olist_E-commerce_Analytics_Dashboard.pbix"><b>📦 Download .PBIX Model</b></a> •
+  <a href="Report_and_Dashboard/Olist_E-commerce_Analytics_Dashboard.pdf"><b>📄 View Compiled PDF</b></a> •
+  <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce"><b>💾 Source Dataset (Kaggle)</b></a>
 </p>
 
 ---
@@ -50,7 +50,7 @@ Instead of cluttering the documentation layout, toggle the links below to expand
 
 | Page Name | Strategic Analytical Focus & Core Business Value | Interactive Visual Asset |
 | :--- | :--- | :--- |
-| **01. Central Navigation Hub** | Serves as a streamlined executive landing platform featuring modular curved navigation cards and synchronized dashboard entry gateways. | [🖼️ View Page Link](Assets/01_Home_Page.jpg) |
+| **01. Central Navigation Hub** | Serves as a streamlined executive landing platform featuring modular curved navigation cards and synchronized dashboard entry gateways. | [🖼️ View Page Link](Assets/01_Home_Page.png) |
 | **02. Executive Strategic Suite** | Tracks macro-level enterprise health indicators including Gross Revenue growth trends, Target Attainment metrics, and Profitability Contribution matrix segments. | [🖼️ View Page Link](Assets/02_Executive_Strategic_Suite.png) |
 | **03. Logistics Intelligence** | Isolates shipping velocity metrics, monitors regional delivery transit bottlenecks, tracks SLA compliance drops, and correlates freight burdens against speed. | [🖼️ View Page Link](Assets/03_Logistics_Intelligence.png) |
 | **04. Ecosystem & Network Dynamics** | Maps marketplace scaling health by tracking active buyer/vendor concentration ratios, user retention velocities, and multidimensional customer satisfaction indexes. | [🖼️ View Page Link](Assets/04_Ecosystem_&_Network_Dynamics.png) |
