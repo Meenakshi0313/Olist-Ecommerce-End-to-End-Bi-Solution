@@ -76,4 +76,4 @@ The complete engineering scripts and compiled interactive models are open-source
 ***
 **Author:** Meenakshi Singh  
 *Data Professional | SQL Engineering | Power BI Architecture*
-Portfolio Focus: Business Intelligence & Strategic Analytics
+*Portfolio Focus: Business Intelligence & Strategic Analytics*
