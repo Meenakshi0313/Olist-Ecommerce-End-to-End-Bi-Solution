@@ -50,7 +50,7 @@ Instead of cluttering the documentation layout, toggle the links below to expand
 
 | Page Name | Strategic Analytical Focus & Core Business Value | Interactive Visual Asset |
 | :--- | :--- | :--- |
-| **01. Central Navigation Hub** | Serves as a streamlined executive landing platform featuring modular curved navigation cards and synchronized dashboard entry gateways. | [🖼️ View Page Link](Assets/01_Home_Page.jpg) |
+| **01. Central Navigation Hub** | Serves as a streamlined executive landing platform featuring modular curved navigation cards and synchronized dashboard entry gateways. | [🖼️ View Page Link](Assets/01_Home_Page.png) |
 | **02. Executive Strategic Suite** | Tracks macro-level enterprise health indicators including Gross Revenue growth trends, Target Attainment metrics, and Profitability Contribution matrix segments. | [🖼️ View Page Link](Assets/02_Executive_Strategic_Suite.png) |
 | **03. Logistics Intelligence** | Isolates shipping velocity metrics, monitors regional delivery transit bottlenecks, tracks SLA compliance drops, and correlates freight burdens against speed. | [🖼️ View Page Link](Assets/03_Logistics_Intelligence.png) |
 | **04. Ecosystem & Network Dynamics** | Maps marketplace scaling health by tracking active buyer/vendor concentration ratios, user retention velocities, and multidimensional customer satisfaction indexes. | [🖼️ View Page Link](Assets/04_Ecosystem_&_Network_Dynamics.png) |
