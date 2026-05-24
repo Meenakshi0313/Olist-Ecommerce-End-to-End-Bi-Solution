@@ -73,7 +73,10 @@ The complete engineering scripts and compiled interactive models are open-source
 * Browse the SQL optimization logic inside the `/SQL_Scripts/` folder.
 * Download the compiled **`Olist_Ecommerce_Analytics_Dashboard.pbix`** file inside the `/Report_and_Dashboard/` directory to inspect live DAX calculations, evaluation contexts, and model relationships within Power BI Desktop.
 
-***
+---
+
 **Author:** Meenakshi Singh  
+
 *Data Professional | SQL Engineering | Power BI Architecture*
+
 *Portfolio Focus: Business Intelligence & Strategic Analytics*
