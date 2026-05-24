@@ -2,10 +2,10 @@
 
 <p align="center">
   <a href="#-executive-bi-dashboard-suite"><b>📊 View Dashboards</b></a> •
-  <a href="01_Data_Architecture/create_gold_views.sql"><b>💾 T-SQL Gold Views Script</b></a> •
-  <a href="02_BI_Suite_Files/Olist_Ecommerce_Analytics_Dashboard.pbix"><b>📦 Download .PBIX Model</b></a> •
-  <a href="02_BI_Suite_Files/Olist_Executive_BI_Suite_Report.pdf"><b>📄 View Compiled PDF</b></a> •
-  <a href="https://www.kaggle.com/datasets/olistbr/brazilian-e-commerce"><b>💾 Source Dataset (Kaggle)</b></a>
+  <a href="SQL_Scripts/02_Gold_Reporting_Views.sql"><b>💾 T-SQL Gold Views Script</b></a> •
+  <a href="Report_and_Dashboard/Olist_E-commerce_Analytics_Dashboard.pbix"><b>📦 Download .PBIX Model</b></a> •
+  <a href="Report_and_Dashboard/Olist_E-commerce_Analytics_Dashboard.pdf"><b>📄 View Compiled PDF</b></a> •
+  <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce"><b>💾 Source Dataset (Kaggle)</b></a>
 </p>
 
 ---
